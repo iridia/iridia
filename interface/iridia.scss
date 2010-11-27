@@ -74,20 +74,30 @@ body {
 	
 		min-width: auto;
 		max-width: 8 * 72px;
+		margin: 0 auto;
 	
 	}
 	
 	> h1 {
 	
-		display: block; 
+	//	display: block; 
 	
 		@include textReplacement;
-		@include size(6 * 18px, 3 * 18px);
+		height: 3 * 18px;
+		
+		display: block;
+		
+	//	@include size(6 * 18px, 3 * 18px);
+	
 		background: url(logotype.web.png);
 		
-		margin-left: -18px;
-		margin-top: 36px;
+/* 		margin-left: -18px; */
+		padding-top: 36px;
 		margin-bottom: 9px;
+		
+		background-position-x: -18px;
+		background-position-y: 36px;
+		background-repeat: no-repeat;
 			
 	}
 	
@@ -219,7 +229,7 @@ a {
 
 
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 720px) {
 
 	body {
 	
