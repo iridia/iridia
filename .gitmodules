@@ -1,0 +1,3 @@
+[submodule "dependencies/monoSnippets"]
+	path = dependencies/monoSnippets
+	url = git://github.com/monoceroi/monoSnippets.git

@@ -1,0 +1,320 @@
+@import "../dependencies/monoSnippets/lib.monoSnippets.reset";
+@import "../dependencies/monoSnippets/lib.monoSnippets";
+
+
+
+
+
+@mixin fontface ($family, $baseName) {
+
+	@font-face {
+	
+		font-family: $family;
+		src: url("#{$baseName}.eot");
+		src: local("☺"),
+		url("#{$baseName}.woff") format("woff"),
+		url("#{$baseName}.otf") format("opentype"),
+		url("#{$baseName}.svg#filename") format("svg");
+	
+	}
+
+}
+
+
+
+
+
+@include fontface("Vegur", "font.Vegur.regular.0.602");
+@include fontface("Vegur Bold", "font.Vegur.bold.0.602");
+
+body {
+
+	background: rgb(240, 240, 240);
+	text-rendering: optimizeLegibility;
+
+}
+
+
+
+
+
+.bounding {
+
+	@include borderRadius(2px);
+	background: white;
+	
+	@include boxShadow(rgba(0, 0, 0, .15), 0px, 2px, 4px);
+	
+	padding: 8px;
+	margin: 16px 0px;
+
+}
+
+
+
+
+
+body {
+
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", sans-serif;
+	
+	margin-left: 72px;
+	margin-right: 72px;
+	
+	font-size: 13px;
+	line-height: 18px;
+	
+	& > *:last-child {
+	
+		background: red;
+	
+	}
+	
+	> * {
+	
+		min-width: auto;
+		max-width: 8 * 72px;
+	
+	}
+	
+	> h1 {
+	
+		display: block; 
+	
+		@include textReplacement;
+		@include size(6 * 18px, 3 * 18px);
+		background: url(logotype.web.png);
+		
+		margin-left: -18px;
+		margin-top: 36px;
+	
+	}
+	
+	@include transition(.25s);  
+	
+	padding-bottom: 36px;
+
+}
+
+
+
+
+
+h2 {
+
+	font-family: "Vegur Bold", "Helvetica", "Arial", sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: rgb(128, 128, 128);
+	margin-top: 36px;
+	
+}
+
+h3 {
+
+	margin-top: 18px;
+	color: rgb(255 * .35, 255 * .35, 255 * .35);
+
+}
+
+p {
+
+	margin-top: 18px;
+	font-size: 13px;
+	color: rgb(256 * .4, 256 * .4, 256 * .4);
+
+}
+
+
+
+
+
+ul {
+
+	margin-top: 18px;
+
+	li {
+	
+		@include everything(display, box); 
+		@include everyone(box-orient, horizontal);
+		
+		+ li {
+		
+			margin-top: 18px;
+		
+		}
+		
+	}
+
+	h3 {
+
+		width: 216px - 18px;
+		text-align: right;
+		margin-right: 18px;
+		
+		margin-top: 0px;
+					
+	}
+	
+	section.contents {
+	
+		@include everyone(box-flex, 1);
+	
+	}
+	
+	p {
+	
+	
+	}
+	
+	+ h3 {
+	
+		margin-top: 27px;
+	
+	}
+	
+
+}
+
+
+
+
+
+a {
+
+	background: rgba(0, 0, 0, .075);
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: -2px;
+	margin-right: -2px;
+	
+	&:hover {
+	
+	background: rgba(0, 0, 0, .1);
+	
+	}
+	
+	@include borderRadius(2px); 
+
+}
+
+
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	body > h1 {
+	
+		background: url("logotype.web@2x.png");
+		@include everyone(background-size, 100%);
+	
+	}
+	
+}
+
+
+
+
+
+@media all and (max-width: 320px) {
+
+	body {
+	
+		> * {
+	
+			min-width: auto;
+		
+		}
+		
+		margin-left: 32px;
+		margin-right: 32px;
+	
+	}
+	
+	ul li {
+	
+		display: block;
+	
+	}
+	
+	ul section.contents {
+	
+		@include everyone(box-flex, none);
+	
+	}
+	
+	ul h3 {
+	
+		display: block;
+		float: none;
+		width: auto;
+		margin-right: 0px;
+		text-align: left;
+		margin-top: 27px;
+		margin-bottom: -9px;
+	
+	}
+	
+	h2 + ul li h3 {
+	
+		margin-top: 18px;
+	
+	}
+
+}
+
+
+
+
+
+/*
+nav {
+
+	ul {
+	
+		display: block;
+		width: 100%;
+		text-align: center;
+	
+	}
+
+	li {
+	
+		@include inlineBlock;
+		
+		+ li:before {
+		
+			@include pseudoBlock;
+			@include inlineBlock;
+			
+			width: 2em;
+			text-align: center;
+			
+			content: " | "; 
+		
+		}
+	
+	}
+
+}
+*/
+
+body > footer {
+
+	height: 64px;
+	position: absolute;
+	bottom: 0px;
+
+	border-top: 1px solid rgb(200, 200, 200);
+	
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 12px;
+	
+	color: gray;
+
+}
