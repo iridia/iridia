@@ -1,0 +1,91 @@
+@import "../dependencies/monoSnippets/lib.monoSnippets";
+
+.grid {
+
+	li {
+	
+		vertical-align: top;
+		@include width(160px);
+		margin: 16px;
+		
+		cursor: pointer;
+		
+		img {
+		
+			background-color: rgba(0, 0, 0, 0);
+			@include transition1(.125s, background-color);
+		
+		}
+		
+		&:hover {
+		
+			img {
+		
+				background-color: rgba(0, 0, 0, .05);
+				@include borderRadius(4px); 
+				@include boxShadowWithLiteral(
+				
+					inset rgba(0, 0, 0, .05) 0px 1px 2px,
+					rgba(255, 255, 255, .25) 0px 1px 0px
+				
+				);
+			
+			}
+		
+		}
+		
+		img {
+		
+			display: block;
+			width: 100%;
+			height: auto;
+			
+			padding: 8px;
+			margin: -8px;
+			
+			opacity: .75;
+			
+			@include transition1(.125s, opacity); 
+		
+		}
+		
+		&:hover img {
+		
+			opacity: 1;
+		
+		}
+		
+		h3 {
+		
+			margin: 0px auto;
+			width: auto;
+			
+			font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+			font-size: 14px;
+			line-height: 36px;
+			font-weight: normal;
+			text-align: center;
+			
+			margin-top: 16px;
+		
+			color: rgb(192, 192, 192);
+			
+			@include transition1(.125s, color); 
+					
+		}
+		
+		&:hover h3 {
+		
+			color: rgb(64, 64, 64);
+		
+		}
+		
+		a {
+		
+			background: transparent;
+		
+		}
+	
+	}
+
+}

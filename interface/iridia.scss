@@ -5,7 +5,7 @@
 
 
 
-@mixin fontface ($family, $baseName) {
+@mixin fontface ($family, $baseName, $svgPartName: "") {
 
 	@font-face {
 	
@@ -13,8 +13,9 @@
 		src: url("#{$baseName}.eot");
 		src: local("☺"),
 		url("#{$baseName}.woff") format("woff"),
+		url('#{$baseName}.ttf') format('truetype'),
 		url("#{$baseName}.otf") format("opentype"),
-		url("#{$baseName}.svg#filename") format("svg");
+		url("#{$baseName}.svg##{$svgPartName}") format("svg");
 	
 	}
 
@@ -24,14 +25,38 @@
 
 
 
-@include fontface("Vegur", "font.Vegur.regular.0.602");
-@include fontface("Vegur Bold", "font.Vegur.bold.0.602");
+@include fontface("Vegur", "font.vegur.regular.0.602", "webfontIZdVxNMP");
+@include fontface("Vegur Light", "font.vegur.light.0.602", "webfontaLJqQT5b");
+@include fontface("Vegur Bold", "font.vegur.bold.0.602", "webfontB11v4HvZ");
+@include fontface("Vegur Medium", "font.vegur.medium.0.602", "webfont2Rsn4maG");
 
 body {
 
 	background: rgb(240, 240, 240);
 	text-rendering: optimizeLegibility;
 
+}
+
+@-webkit-keyframes backgroundAnimation {
+
+	0% {
+	
+		background: rgb(240, 240, 240);
+		
+	}
+	
+	50% {
+	
+		background: rgb(235, 235, 235);
+		
+	}
+	
+	100% {
+	
+		background: rgb(240, 240, 240);
+		
+	}
+	
 }
 
 
@@ -66,7 +91,7 @@ body {
 	
 	& > *:last-child {
 	
-		background: red;
+	//	background: red;
 	
 	}
 	
@@ -84,20 +109,39 @@ body {
 	
 		@include textReplacement;
 		height: 3 * 18px;
+		width: 100%;
 		
-		display: block;
+	//	display: block;
 		
 	//	@include size(6 * 18px, 3 * 18px);
 	
-		background: url(logotype.web.png);
-		
-/* 		margin-left: -18px; */
-		padding-top: 36px;
+		background-image: url(logotype.web.png);
+		background-color: transparent;
+	
+		position: relative;	
+		left: -18px;
+		margin-top: 36px;
 		margin-bottom: 9px;
+
+		background-position: -1px 0px;
 		
-		background-position-x: -18px;
-		background-position-y: 36px;
+		background-position-x: -1px;
+		background-position-y: 0px;
 		background-repeat: no-repeat;
+		
+		a {
+		
+			display: block;
+			@include size(100%, 3 * 18px);
+			background: transparent;
+			
+			&:hover {
+			
+				background: transparent;
+			
+			} 
+		
+		}
 			
 	}
 	
@@ -111,20 +155,43 @@ body {
 
 
 
+.description {
+
+	font-family: "Georgia", serif;
+	font-style: italic;
+	font-size: 85%;
+	
+	h1 + & {
+	
+		display: block;
+		text-align: right;
+		margin-top: -27px + 2px;
+		color: rgb(200, 200, 200);
+	
+	}
+
+}
+
+
+
+
+
 h2 {
 
-	font-family: "Vegur Bold", "Helvetica", "Arial", sans-serif;
-	font-weight: bold;
+	font-family: "Vegur Medium", "Helvetica", "Arial", sans-serif;
+	font-weight: normal;
 	font-size: 18px;
 	text-transform: uppercase;
 	color: rgb(128, 128, 128);
 	margin-top: 36px;
+	text-indent: -1px;
+	text-shadow: rgba(255, 255, 255, .75) 0px 1px 0px;
 	
 }
 
 h3 {
 
-	margin-top: 18px;
+	margin-top: 27px;
 	color: rgb(255 * .35, 255 * .35, 255 * .35);
 
 }
@@ -147,8 +214,8 @@ ul {
 
 	li {
 	
-		@include everything(display, box); 
-		@include everyone(box-orient, horizontal);
+		display: table;
+		width: 100%;
 		
 		+ li {
 		
@@ -156,13 +223,21 @@ ul {
 		
 		}
 		
+		> * {
+		
+			display: table-cell;
+		
+		}
+		
+		
+		
 	}
 
 	h3 {
 
-		width: 216px - 18px;
+ 		width: 216px - 18px;
 		text-align: right;
-		margin-right: 18px;
+		padding-right: 18px;
 		
 		margin-top: 0px;
 					
@@ -171,6 +246,12 @@ ul {
 	section.contents {
 	
 		@include everyone(box-flex, 1);
+		
+		p {
+		
+			margin-top: 0px;
+		
+		}
 	
 	}
 	
@@ -218,8 +299,14 @@ a {
 
 	body > h1 {
 	
-		background: url("logotype.web@2x.png");
+		@include size(6 * 18px, 3 * 18px);
+		margin-left: 0px;
+	
+		background-image: url("logotype.web@2x.png");
 		@include everyone(background-size, 100%);
+		
+	//	background-position-x: -2px;
+	//	background-position-y: 0px;
 	
 	}
 	
@@ -228,6 +315,24 @@ a {
 
 
 
+
+@media all and (max-width: 320px) {
+	
+	p.description {
+	
+		h1 + & {
+		
+			display: none;
+		
+		}
+	
+		text-align: center !important;
+		margin-top: 0px;
+		width: 100%;
+	
+	}
+
+}
 
 @media all and (max-width: 720px) {
 
@@ -241,6 +346,15 @@ a {
 		
 		margin-left: 32px;
 		margin-right: 32px;
+	
+	}
+	
+	h1 + .description {
+	
+		display: block;
+		width: auto;
+		margin-top: 0px;
+		text-align: left;
 	
 	}
 	
@@ -259,12 +373,9 @@ a {
 	ul h3 {
 	
 		display: block;
-		float: none;
 		width: auto;
 		margin-right: 0px;
 		text-align: left;
-		margin-top: 27px;
-		margin-bottom: -9px;
 	
 	}
 	
@@ -327,5 +438,21 @@ body > footer {
 	line-height: 12px;
 	
 	color: gray;
+
+}
+
+
+
+
+
+.grid {
+
+	li {
+	
+		@include inlineBlock;
+		@include width(128px);
+		margin: 8px;
+	
+	}
 
 }

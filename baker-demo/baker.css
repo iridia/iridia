@@ -1,0 +1,110 @@
+.grid li {
+  vertical-align: top;
+  width: 160px;
+  min-width: 160px;
+  max-width: 160px;
+  margin: 16px;
+  cursor: pointer; }
+  .grid li img {
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: all 0.125s linear;
+    -moz-transition: all 0.125s linear;
+    -o-transition: all 0.125s linear;
+    -uu-transition: all 0.125s linear;
+    -icab-transition: all 0.125s linear;
+    -khtml-transition: all 0.125s linear;
+    -ms-transition: all 0.125s linear;
+    transition: all 0.125s linear;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    -uu-transition-property: background-color;
+    -icab-transition-property: background-color;
+    -khtml-transition-property: background-color;
+    -ms-transition-property: background-color;
+    transition-property: background-color; }
+  .grid li:hover img {
+    background-color: rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -o-border-radius: 4px 4px 4px 4px;
+    -uu-border-radius: 4px 4px 4px 4px;
+    -icab-border-radius: 4px 4px 4px 4px;
+    -khtml-border-radius: 4px 4px 4px 4px;
+    -ms-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    -uu-background-clip: padding-box;
+    -icab-background-clip: padding-box;
+    -khtml-background-clip: padding-box;
+    -ms-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -moz-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -o-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -uu-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -icab-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -khtml-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    -ms-box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(255, 255, 255, 0.25) 0px 1px 0px; }
+  .grid li img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    margin: -8px;
+    opacity: .75;
+    -webkit-transition: all 0.125s linear;
+    -moz-transition: all 0.125s linear;
+    -o-transition: all 0.125s linear;
+    -uu-transition: all 0.125s linear;
+    -icab-transition: all 0.125s linear;
+    -khtml-transition: all 0.125s linear;
+    -ms-transition: all 0.125s linear;
+    transition: all 0.125s linear;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    -uu-transition-property: opacity;
+    -icab-transition-property: opacity;
+    -khtml-transition-property: opacity;
+    -ms-transition-property: opacity;
+    transition-property: opacity; }
+  .grid li:hover img {
+    opacity: 1; }
+  .grid li h3 {
+    margin: 0px auto;
+    width: auto;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 36px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 16px;
+    color: silver;
+    -webkit-transition: all 0.125s linear;
+    -moz-transition: all 0.125s linear;
+    -o-transition: all 0.125s linear;
+    -uu-transition: all 0.125s linear;
+    -icab-transition: all 0.125s linear;
+    -khtml-transition: all 0.125s linear;
+    -ms-transition: all 0.125s linear;
+    transition: all 0.125s linear;
+    -webkit-transition-property: color;
+    -moz-transition-property: color;
+    -o-transition-property: color;
+    -uu-transition-property: color;
+    -icab-transition-property: color;
+    -khtml-transition-property: color;
+    -ms-transition-property: color;
+    transition-property: color; }
+  .grid li:hover h3 {
+    color: #404040; }
+  .grid li a {
+    background: transparent; }
