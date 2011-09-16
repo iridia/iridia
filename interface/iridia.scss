@@ -32,7 +32,7 @@
 
 body {
 
-	background: rgb(240, 240, 240);
+	background: rgb(245, 245, 245);
 	text-rendering: optimizeLegibility;
 
 }
@@ -178,15 +178,23 @@ body {
 
 h2 {
 
-	font-family: "Vegur Medium", "Helvetica", "Arial", sans-serif;
+	font-family: "Helvetica", "Arial", sans-serif;
 	font-weight: normal;
-	font-size: 18px;
-	text-transform: uppercase;
+	font-size: 16px;
 	color: rgb(128, 128, 128);
 	margin-top: 36px;
 	text-indent: -1px;
 	text-shadow: rgba(255, 255, 255, .75) 0px 1px 0px;
 	
+}
+
+hr {
+
+	margin: 8px auto 8px auto;
+	border: none;
+	height: 1px;
+	background: #BBB;
+
 }
 
 h3 {
@@ -229,8 +237,48 @@ ul {
 		
 		}
 		
+	}
+	
+	&.wide {
+	
+		background: rgba(0, 0, 0, .05);
+		border: 1px solid rgba(0, 0, 0, .125);
+		padding: 4px;
+		max-width: 8 * 72px - 2 * 4px;
+		@include borderRadius(8px); 
+	
+		li {
+				
+			display: inline-block;
+			
+			a > * {
+				display: block;
+				width: auto;
+			}
+			& a, & a > * {
+				text-align: center;
+				margin: 0;
+				padding: 0;
+			}
+			
+			p { font-size: 9px; }
+			a { display: inline; background: none; }
+			h3 { font-size: 120%; line-height: 1.2; margin-top: 2px; }
+			a > img { display: inline;}
+			
+			width: 30%;
+			
+			> a {
+				@include borderRadius(4px); 
+				padding: 10px 8px 6px 8px;
+				&:hover {
+					background: rgba(0, 0, 0, .02);
+					@include boxShadow(rgba(0, 0, 0, .125), 0px, 0px, 2px);
+				}
+			}
 		
-		
+		}
+	
 	}
 
 	h3 {
@@ -255,8 +303,9 @@ ul {
 	
 	}
 	
-	p {
+	p.aside {
 	
+		font-size: 75%;
 	
 	}
 	
